@@ -42,8 +42,7 @@ while True:
     # Draw a black filled box to clear the image.
     draw.rectangle((0,0,width,height), outline=0, fill=0)
 
-    draw.text((x, top), "Páratartalom={1:0.1f}% ".format(para),  font=font, fill=255)
-    draw.text((x, top+8), "Hőmérséklet={0:0.1f}C ".format(ho),  font=font, fill=255)
+    draw.text((x, top), "Temp={0:0.1f}C  Humidity={1:0.1f}%".format(ho, para), font=font, fill=255)
 
     # Display image.
     disp.image(image)
