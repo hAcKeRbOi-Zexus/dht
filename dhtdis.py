@@ -37,17 +37,15 @@ bottom = height-padding
 x = 0
 font = ImageFont.load_default()
 
-def Main():
+while True:
     para, ho = Adafruit_DHT.read(DHT_SENSOR, DHT_PIN)
     # Draw a black filled box to clear the image.
     draw.rectangle((0,0,width,height), outline=0, fill=0)
 
-    draw.text((x, top), "Temp={0:0.1f}C  Humidity={1:0.1f}%".format(ho, para),  font=font, fill=255)
+    draw.text((x, top), "Temp={0:0.1f}C".format(ho),  font=font, fill=255)
+    draw.text((x, top), "Humidity={1:0.1f}%".format(para),  font=font, fill=255)
 
     # Display image.
     disp.image(image)
     disp.display()
     time.sleep(.1)
-
-if __name__ == "__main__":
-    Main()
